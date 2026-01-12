@@ -1,16 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Hatibovic Portfolio | Visual Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            accent: '#00ff9d',
+                            gold: '#D4AF37'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #e5e5e5; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #00ff9d; }
+        .glass-card {
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: #00ff9d;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.1);
+            transform: translateY(-5px);
+        }
+        .text-gradient {
+            background: linear-gradient(to r, #fff, #00ff9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
 <body class="antialiased font-sans">
 
-    <nav class="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/10">
-        <div class="flex items-center space-x-6">
-            <a href="#" class="text-xl font-serif font-bold tracking-tighter">BUD<span class="text-brand-accent">XXX</span></a>
-            <div class="hidden lg:flex space-x-4 border-l border-white/20 pl-6">
-                <a href="https://developers.google.com/profile/u/hatibovic" target="_blank" class="text-[10px] uppercase tracking-widest hover:text-brand-accent transition"><i class="fab fa-google mr-2"></i>G-Dev</a>
-                <a href="https://www.linkedin.com/in/dinohatibovic/" target="_blank" class="text-[10px] uppercase tracking-widest hover:text-brand-accent transition"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-                <a href="https://github.com/dinohatibovic" target="_blank" class="text-[10px] uppercase tracking-widest hover:text-brand-accent transition"><i class="fab fa-github mr-2"></i>GitHub</a>
-            </div>
-        </div>
+    <nav class="fixed w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/5">
+        <a href="#" class="text-2xl font-serif font-bold tracking-tighter">BUD<span class="text-brand-accent">XXX</span></a>
         <div class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em]">
             <a href="#about" class="hover:text-brand-accent transition">About</a>
+            <a href="#experience" class="hover:text-brand-accent transition">Experience</a>
             <a href="#skills" class="hover:text-brand-accent transition">Skills</a>
             <a href="#projects" class="hover:text-brand-accent transition">Showcase</a>
         </div>
@@ -18,32 +68,42 @@
 
     <header class="relative h-screen flex items-center justify-center overflow-hidden border-b border-white/5">
         <div class="relative z-10 text-center px-4 fade-in">
-            <p class="text-brand-accent uppercase tracking-[0.5em] text-sm mb-4">// Cloud & AI Advisor //</p>
-            <h1 class="text-6xl md:text-9xl font-serif font-bold mb-6 text-gradient uppercase">Dino Hatibovic</h1>
+            <p class="text-brand-accent uppercase tracking-[0.5em] text-sm mb-4">// Visual Narrative & Tech //</p>
+            <h1 class="text-6xl md:text-9xl font-serif font-bold mb-6 text-gradient">Bud XXX</h1>
             <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl leading-relaxed font-light">
-                Arhitekta privatnog vlasništva. Razvoj <span class="text-white">GIS i AI sistema</span> unutar 
-                <span class="text-brand-accent">Google Cloud Platforme</span>.
+                Full Stack Developer building <span class="text-white">pixel-perfect</span> digital experiences and 
+                <span class="text-brand-accent">visual architectures</span>.
             </p>
+            <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:holdin.genesis@gmail.com" class="px-8 py-4 bg-brand-accent text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-all">Contact Me</a>
+                <button onclick="window.print()" class="px-8 py-4 border border-white/20 hover:border-brand-accent transition-all uppercase text-xs tracking-widest">Save as PDF</button>
+            </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-24 space-y-32">
+
         <section id="about" class="grid md:grid-cols-2 gap-12 items-center fade-in">
             <div>
-                <h2 class="text-xs uppercase tracking-[0.4em] text-brand-accent mb-4">01. Identity</h2>
+                <h2 class="text-xs uppercase tracking-[0.4em] text-brand-accent mb-4">01. Background</h2>
                 <h3 class="text-4xl font-serif mb-6">Dino Hatibovic Portfolio</h3>
                 <p class="text-gray-400 leading-relaxed mb-6">
-                    Fokusiran na razvoj rješenja kroz projekte <span class="text-white">geotech-mapsbih</span> i <span class="text-white">next-genesis-422717</span>. 
-                    Kombinujem Node.js, Python 3.14 i Gemini API za automatizaciju i monetizaciju MVP proizvoda.
+                    I am a Cloud & AI Advisor and Architect of Private Ownership. This portfolio represents my work on symbolism, sentiment analysis, and GIS systems within the geotech-mapsbih project.
                 </p>
-                <div class="p-6 glass-card rounded-xl border-l-4 border-brand-accent">
-                    <h4 class="text-white font-bold mb-2">Google Maps Platform Innovator</h4>
-                    <p class="text-xs text-gray-500 uppercase tracking-widest">Aktivna Maps API Navigacija i GIS</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 glass-card rounded-lg border-l-2 border-brand-accent">
+                        <span class="block text-white font-bold">Responsive</span>
+                        <span class="text-xs text-gray-500 uppercase">Mobile First</span>
+                    </div>
+                    <div class="p-4 glass-card rounded-lg border-l-2 border-brand-accent">
+                        <span class="block text-white font-bold">Cloud Architect</span>
+                        <span class="text-xs text-gray-500 uppercase">Google Cloud Platform</span>
+                    </div>
                 </div>
             </div>
             <div class="relative group">
                 <div class="absolute -inset-1 bg-brand-accent rounded-full blur opacity-25 group-hover:opacity-50 transition"></div>
-                <img src="./media/IMG_20201218_080048.jpg" alt="Dino Hatibovic" class="relative w-72 h-72 md:w-96 md:h-96 mx-auto object-cover rounded-full border border-white/10 shadow-2xl">
+                <img src="./media/IMG_20201218_080048.jpg" alt="Dino Hatibovic" class="relative w-64 h-64 md:w-80 md:h-80 mx-auto object-cover rounded-full border border-white/10">
             </div>
         </section>
 
@@ -51,16 +111,51 @@
             <h2 class="text-xs uppercase tracking-[0.4em] text-brand-accent mb-12">02. Video Log & Showcase</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="group relative rounded-xl overflow-hidden glass-card">
-                    <video src="./media/Prompt_za_AI_video_s_glasom.mp4" controls class="w-full aspect-video object-cover"></video>
+                    <div class="aspect-video w-full">
+                        <video 
+                            src="./media/Prompt_za_AI_video_s_glasom.mp4" 
+                            controls 
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                        </video>
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold tracking-widest uppercase text-sm">Audiospecijalac - Akcija</h3>
-                        <p class="text-brand-accent text-[10px] mt-1 italic">Virtualni prepoznavač glasa u učionici</p>
+                        <h3 class="text-white font-bold">AI Video Logic</h3>
+                        <p class="text-brand-accent text-xs uppercase tracking-widest mt-1">Geotech Maps BIH Integration</p>
                     </div>
                 </div>
-                <div class="glass-card rounded-xl p-6 flex flex-col justify-center">
-                    <img src="./media/57d0232b-0140-4cdb-97cd-7cab9af73119.png" alt="UI Design" class="rounded border border-white/5 opacity-80 hover:opacity-100 transition mb-4">
-                    <p class="text-[10px] uppercase text-gray-500 tracking-widest">Symbolic Landscape Concept</p>
+                
+                <div class="group relative rounded-xl overflow-hidden glass-card flex items-center justify-center p-8">
+                    <img src="./media/57d0232b-0140-4cdb-97cd-7cab9af73119.png" alt="Concept Design" class="rounded-lg opacity-80 hover:opacity-100 transition">
                 </div>
             </div>
         </section>
+
     </main>
+
+    <footer class="py-20 border-t border-white/5 text-center">
+        <div id="contact" class="mb-12">
+            <h2 class="text-4xl font-serif mb-8">Let's build something together.</h2>
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com/budxxx" class="text-2xl hover:text-brand-accent transition"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/dinohatibovic" class="text-2xl hover:text-brand-accent transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:holdin.genesis@gmail.com" class="text-2xl hover:text-brand-accent transition"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <p class="text-gray-600 text-[10px] uppercase tracking-[0.3em]">
+            &copy; 2026 Dino Hatibovic. // Architecture of Private Ownership //
+        </p>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
